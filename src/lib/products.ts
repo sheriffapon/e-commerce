@@ -120,6 +120,15 @@ const productsData: Omit<Product, 'images'>[] = [
     description: 'Exuding timeless sophistication, this meticulously crafted overcoat is tailored from a premium, heavyweight wool blend for exceptional warmth and a structured drape. It features a classic notched lapel, a clean single-breasted front, and a smooth, fully-lined interior for effortless layering. A versatile masterpiece for the modern gentleman\'s winter wardrobe.',
     imageIds: ['product-12-front'],
   },
+  {
+    id: '13',
+    name: "Men's Charcoal Suit",
+    price: 495.0,
+    category: "Men's",
+    sizes: ['38R', '40R', '40L', '42R', '42L', '44R'],
+    description: 'A modern two-piece suit in a versatile charcoal gray. Expertly tailored from a fine wool-blend for a sharp, contemporary silhouette. The jacket is fully lined and features a two-button closure, while the trousers are flat-fronted for a clean look.',
+    imageIds: ['product-13-front'],
+  },
 ];
 
 const products: Product[] = productsData.map(p => ({

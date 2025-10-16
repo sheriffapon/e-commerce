@@ -103,6 +103,12 @@
       "imageHint": "wool overcoat"
     },
     {
+      "id": "product-13-front",
+      "description": "A modern men's suit in charcoal gray.",
+      "imageUrl": "https://picsum.photos/seed/suit/800/1200",
+      "imageHint": "mens suit"
+    },
+    {
       "id": "lookbook-1",
       "description": "Model in a city street wearing a full outfit from the collection.",
       "imageUrl": "https://picsum.photos/seed/lb1/900/1200",
