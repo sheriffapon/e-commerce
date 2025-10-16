@@ -11,6 +11,8 @@ import {
   SheetContent,
   SheetTrigger,
   SheetClose,
+  SheetHeader,
+  SheetTitle,
 } from '@/components/ui/sheet';
 import { Button } from './ui/button';
 
@@ -81,6 +83,9 @@ export function Header() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right">
+                <SheetHeader>
+                   <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+                </SheetHeader>
                 <div className="p-6">
                   <div className="mb-8">
                      <Logo />
