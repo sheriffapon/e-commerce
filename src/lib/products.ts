@@ -4,7 +4,7 @@ export type Product = {
   id: string;
   name: string;
   price: number;
-  category: 'Coats' | 'Dresses' | 'Trousers' | 'Tops' | 'Sweaters' | 'Blazers';
+  category: 'Coats' | 'Dresses' | 'Trousers' | 'Tops' | 'Sweaters' | 'Blazers' | "Men's" | "Women's";
   sizes: string[];
   description: string;
   imageIds: string[];
@@ -83,6 +83,42 @@ const productsData: Omit<Product, 'images'>[] = [
     sizes: ['XS', 'S', 'M', 'L'],
     description: 'A show-stopping evening gown in black. This floor-length dress features an asymmetric neckline, a fitted bodice, and a column skirt that elegantly drapes to the floor.',
     imageIds: ['product-8-front'],
+  },
+  {
+    id: '9',
+    name: "Men's Oxford Shirt",
+    price: 95.0,
+    category: "Men's",
+    sizes: ['S', 'M', 'L', 'XL'],
+    description: 'A classic Oxford shirt in crisp white cotton. A versatile staple for any man\'s wardrobe, perfect for both casual and formal occasions.',
+    imageIds: ['product-9-front'],
+  },
+  {
+    id: '10',
+    name: "Men's Slim-Fit Jeans",
+    price: 120.0,
+    category: "Men's",
+    sizes: ['30', '32', '34', '36'],
+    description: 'Modern slim-fit jeans in a versatile dark wash. Made with a hint of stretch for comfort and style.',
+    imageIds: ['product-10-front'],
+  },
+  {
+    id: '11',
+    name: 'Floral Midi Dress',
+    price: 160.0,
+    category: "Women's",
+    sizes: ['XS', 'S', 'M', 'L'],
+    description: 'A beautiful midi dress with a vibrant floral print. Features a flattering A-line silhouette and a cinched waist.',
+    imageIds: ['product-11-front'],
+  },
+  {
+    id: '12',
+    name: "Men's Wool Overcoat",
+    price: 350.0,
+    category: "Men's",
+    sizes: ['S', 'M', 'L', 'XL'],
+    description: 'A sophisticated and warm overcoat crafted from a rich wool blend. Timeless style for the colder months.',
+    imageIds: ['product-12-front'],
   },
 ];
 

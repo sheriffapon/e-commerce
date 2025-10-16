@@ -14,7 +14,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function Home() {
   const products = getProducts();
-  const featuredProducts = products.slice(0, 6);
+  const featuredProducts = products.slice(0, 8);
   const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-banner');
 
   return (
@@ -65,7 +65,7 @@ export default function Home() {
               {featuredProducts.map((product) => (
                 <CarouselItem
                   key={product.id}
-                  className="md:basis-1/2 lg:basis-1/3"
+                  className="basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5"
                 >
                   <div className="p-1">
                     <ProductCard product={product} />

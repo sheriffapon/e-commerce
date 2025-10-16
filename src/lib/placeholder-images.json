@@ -79,6 +79,30 @@
       "imageHint": "evening gown"
     },
     {
+      "id": "product-9-front",
+      "description": "Men's classic Oxford shirt in white.",
+      "imageUrl": "https://picsum.photos/seed/p9f/800/1200",
+      "imageHint": "oxford shirt"
+    },
+    {
+      "id": "product-10-front",
+      "description": "Men's slim-fit dark wash jeans.",
+      "imageUrl": "https://picsum.photos/seed/p10f/800/1200",
+      "imageHint": "mens jeans"
+    },
+    {
+      "id": "product-11-front",
+      "description": "A floral print midi dress.",
+      "imageUrl": "https://picsum.photos/seed/p11f/800/1200",
+      "imageHint": "floral dress"
+    },
+    {
+      "id": "product-12-front",
+      "description": "A men's gray wool overcoat.",
+      "imageUrl": "https://picsum.photos/seed/p12f/800/1200",
+      "imageHint": "men's overcoat"
+    },
+    {
       "id": "lookbook-1",
       "description": "Model in a city street wearing a full outfit from the collection.",
       "imageUrl": "https://picsum.photos/seed/lb1/900/1200",
