@@ -117,7 +117,7 @@ const productsData: Omit<Product, 'images'>[] = [
     price: 350.0,
     category: "Men's",
     sizes: ['S', 'M', 'L', 'XL'],
-    description: 'A sophisticated and warm overcoat crafted from a rich wool blend. Timeless style for the colder months.',
+    description: 'Exuding timeless sophistication, this meticulously crafted overcoat is tailored from a premium, heavyweight wool blend for exceptional warmth and a structured drape. It features a classic notched lapel, a clean single-breasted front, and a smooth, fully-lined interior for effortless layering. A versatile masterpiece for the modern gentleman\'s winter wardrobe.',
     imageIds: ['product-12-front'],
   },
 ];
