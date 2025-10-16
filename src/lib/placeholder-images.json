@@ -99,8 +99,8 @@
     {
       "id": "product-12-front",
       "description": "A men's gray wool overcoat, shown on a model with a professional look.",
-      "imageUrl": "https://picsum.photos/seed/p12f-pro/800/1200",
-      "imageHint": "luxury overcoat"
+      "imageUrl": "https://picsum.photos/seed/overcoat/800/1200",
+      "imageHint": "wool overcoat"
     },
     {
       "id": "lookbook-1",
