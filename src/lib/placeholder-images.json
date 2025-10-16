@@ -149,6 +149,36 @@
       "description": "Two models interacting, showcasing different pieces from the collection.",
       "imageUrl": "https://picsum.photos/seed/lb8/900/1200",
       "imageHint": "fashion models"
+    },
+    {
+      "id": "background-home",
+      "description": "Blurry background of clothes on a rack.",
+      "imageUrl": "https://picsum.photos/seed/bghome/1920/1080",
+      "imageHint": "clothing rack"
+    },
+    {
+      "id": "background-shop",
+      "description": "Blurry background of a vibrant retail clothing store.",
+      "imageUrl": "https://picsum.photos/seed/bgshop/1920/1080",
+      "imageHint": "retail store"
+    },
+    {
+      "id": "background-lookbook",
+      "description": "Blurry background of fashion sketches and fabric swatches.",
+      "imageUrl": "https://picsum.photos/seed/bglook/1920/1080",
+      "imageHint": "fashion design"
+    },
+    {
+      "id": "background-about",
+      "description": "Blurry background of a designer's workshop.",
+      "imageUrl": "https://picsum.photos/seed/bgabout/1920/1080",
+      "imageHint": "design workshop"
+    },
+    {
+      "id": "background-contact",
+      "description": "Blurry background of a minimalist boutique interior.",
+      "imageUrl": "https://picsum.photos/seed/bgcontact/1920/1080",
+      "imageHint": "boutique interior"
     }
   ]
 }
