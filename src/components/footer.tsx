@@ -104,7 +104,7 @@ export function Footer() {
       <div className="container mx-auto max-w-7xl border-t px-4 py-6">
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} PortfolioReady. All rights reserved.
+            © {new Date().getFullYear()} Pero Collection. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             <Link href="#" aria-label="Twitter">

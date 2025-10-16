@@ -12,7 +12,7 @@ export default function AboutPage() {
       <div className="container mx-auto max-w-7xl px-4 py-12 sm:py-16">
         <div className="mb-12 text-center">
           <h1 className="font-headline text-4xl font-bold md:text-5xl">
-            The Story of PortfolioReady
+            The Story of Pero Collection
           </h1>
           <p className="mt-2 text-lg text-muted-foreground">
             Crafting elegance for the modern individual.
@@ -23,7 +23,7 @@ export default function AboutPage() {
           <div className="md:col-span-3">
             <h2 className="font-headline text-3xl font-semibold">Our Mission</h2>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              At PortfolioReady, our mission is to redefine elegance through
+              At Pero Collection, our mission is to redefine elegance through
               thoughtfully designed, ready-made clothing. We believe that style
               should be both effortless and enduring. We create timeless pieces
               that empower the wearer, blending classic silhouettes with modern

@@ -6,7 +6,7 @@ import { Footer } from '@/components/footer';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'PortfolioReady',
+  title: 'Pero Collection',
   description: 'Redefine Your Style with Ready-Made Elegance.',
 };
 

@@ -67,7 +67,7 @@ export default function ContactPage() {
             <div className="flex items-center gap-4">
               <Mail className="h-5 w-5 text-primary" />
               <span className="text-muted-foreground">
-                hello@portfolioready.com
+                hello@perocollection.com
               </span>
             </div>
             <div className="flex items-center gap-4">
