@@ -20,6 +20,7 @@ const navLinks = [
   { href: '/lookbook', label: 'Lookbook' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
+  { href: '/uploader', label: 'Uploader' },
 ];
 
 export function Header() {
