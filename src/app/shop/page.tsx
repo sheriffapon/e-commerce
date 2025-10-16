@@ -18,6 +18,7 @@ import {
 } from '@/components/ui/select';
 import { Separator } from '@/components/ui/separator';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { useNewProduct } from '@/context/new-product-context';
 
 function ShopPageContent() {
   const searchParams = useSearchParams();
@@ -26,7 +27,8 @@ function ShopPageContent() {
   const [selectedCategory, setSelectedCategory] = useState(initialCategory);
   const [sortOrder, setSortOrder] = useState('newest');
 
-  const allProducts = useMemo(() => getProducts(), []);
+  const { newProducts } = useNewProduct();
+  const allProducts = useMemo(() => [...getProducts(), ...newProducts], [newProducts]);
   const categories = useMemo(() => ['all', ...getProductCategories()], []);
   const backgroundImage = PlaceHolderImages.find(
     (img) => img.id === 'background-shop'
@@ -48,7 +50,12 @@ function ShopPageContent() {
           return b.price - a.price;
         case 'newest':
         default:
-          return parseInt(b.id) - parseInt(a.id);
+          // Adjust sorting to handle both string and number IDs
+          const aId = a.id.startsWith('new-') ? parseInt(a.id.split('-')[1]) : parseInt(a.id);
+          const bId = b.id.startsWith('new-') ? parseInt(b.id.split('-')[1]) : parseInt(b.id);
+          if (a.id.startsWith('new-') && !b.id.startsWith('new-')) return -1;
+          if (!a.id.startsWith('new-') && b.id.startsWith('new-')) return 1;
+          return bId - aId;
       }
     });
   }, [selectedCategory, sortOrder, allProducts]);

@@ -1,17 +1,35 @@
 'use client';
 
 import { useState, ChangeEvent, useRef } from 'react';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Upload, X } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { useNewProduct } from '@/context/new-product-context';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import { getProductCategories } from '@/lib/products';
 
 export default function UploaderPage() {
   const [preview, setPreview] = useState<string | null>(null);
   const [fileName, setFileName] = useState<string | null>(null);
+  const [name, setName] = useState('');
+  const [price, setPrice] = useState('');
+  const [description, setDescription] = useState('');
+  const [category, setCategory] = useState<string>('');
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const router = useRouter();
+  const { addProduct } = useNewProduct();
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -41,14 +59,42 @@ export default function UploaderPage() {
       fileInputRef.current.value = '';
     }
   };
-  
+
+  const handleAddToShop = () => {
+    if (!preview || !name || !price || !category) {
+      alert('Please fill out all product details and upload an image.');
+      return;
+    }
+    const newProduct = {
+      id: `new-${Date.now()}`,
+      name,
+      price: parseFloat(price),
+      category: category as any,
+      sizes: ['S', 'M', 'L'],
+      description,
+      imageIds: [],
+      images: [
+        {
+          id: `new-img-${Date.now()}`,
+          imageUrl: preview,
+          description: name,
+          imageHint: 'custom upload',
+        },
+      ],
+    };
+    addProduct(newProduct);
+    router.push('/shop');
+  };
+
   const backgroundImage = PlaceHolderImages.find(
     (img) => img.id === 'background-contact'
   );
 
+  const categories = getProductCategories();
+
   return (
     <div className="relative">
-       {backgroundImage && (
+      {backgroundImage && (
         <Image
           src={backgroundImage.imageUrl}
           alt={backgroundImage.description}
@@ -60,16 +106,16 @@ export default function UploaderPage() {
       <div className="container mx-auto max-w-4xl bg-background/80 px-4 py-12 backdrop-blur-sm sm:py-16">
         <div className="mb-12 text-center">
           <h1 className="font-headline text-4xl font-bold md:text-5xl">
-            Image Uploader
+            Create a New Product
           </h1>
           <p className="mt-2 text-muted-foreground">
-            Select an image to see a preview.
+            Upload an image and add product details.
           </p>
         </div>
 
         <Card className="mx-auto w-full">
           <CardHeader>
-            <CardTitle>Upload your Image</CardTitle>
+            <CardTitle>Product Details</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid gap-6">
@@ -96,7 +142,7 @@ export default function UploaderPage() {
 
               {preview && (
                 <div className="space-y-4">
-                  <h3 className="font-semibold">Preview</h3>
+                  <h3 className="font-semibold">Image Preview</h3>
                   <div className="relative w-full max-w-sm overflow-hidden rounded-lg border">
                     <Image
                       src={preview}
@@ -108,7 +154,9 @@ export default function UploaderPage() {
                   </div>
                   {fileName && (
                     <div className="flex items-center justify-between rounded-md bg-muted/50 p-3">
-                      <p className="truncate text-sm font-medium">{fileName}</p>
+                      <p className="truncate text-sm font-medium">
+                        {fileName}
+                      </p>
                       <Button
                         variant="ghost"
                         size="icon"
@@ -122,6 +170,66 @@ export default function UploaderPage() {
                   )}
                 </div>
               )}
+
+              <div className="space-y-4">
+                <div>
+                  <Label htmlFor="name">Product Name</Label>
+                  <Input
+                    id="name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="e.g. Summer Dress"
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="price">Price</Label>
+                  <Input
+                    id="price"
+                    type="number"
+                    value={price}
+                    onChange={(e) => setPrice(e.target.value)}
+                    placeholder="e.g. 99.99"
+                  />
+                </div>
+                 <div>
+                  <Label htmlFor="category">Category</Label>
+                    <Select
+                      value={category}
+                      onValueChange={setCategory}
+                    >
+                      <SelectTrigger id="category" className="capitalize">
+                        <SelectValue placeholder="Select a category" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {categories.map((cat) => (
+                          <SelectItem
+                            key={cat}
+                            value={cat}
+                            className="capitalize"
+                          >
+                            {cat}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                </div>
+                <div>
+                  <Label htmlFor="description">Description</Label>
+                  <Textarea
+                    id="description"
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                    placeholder="A brief description of the product."
+                  />
+                </div>
+                <Button
+                  onClick={handleAddToShop}
+                  size="lg"
+                  disabled={!preview}
+                >
+                  Add to Shop
+                </Button>
+              </div>
             </div>
           </CardContent>
         </Card>
